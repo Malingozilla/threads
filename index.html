@@ -7,7 +7,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <link rel="shortcut icon" href="images/champion logo.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="images/champion logo.png"
+      type="image/x-icon"
+    />
     <meta name="author" content="Dracarys" />
     <meta name="Description" content="Champion Threads" />
     <!-- Slick CSS -->
@@ -121,7 +125,7 @@
         color: #ffffff !important;
       }
 
-      .dark-mode .more-info{
+      .dark-mode .more-info {
         background-color: #121212;
       }
 
@@ -375,7 +379,7 @@
 
         nav.active {
           display: block;
-          height:350px
+          height: 350px;
         }
 
         #nav {
@@ -426,6 +430,62 @@
           color: #e0e0e0;
         }
       }
+      /* hide checkbox */
+      .theme-switch input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      /* track */
+      .theme-switch .slider {
+        position: relative;
+        width: 60px;
+        height: 30px;
+        background: #d1d1d1;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background 0.4s ease;
+        overflow: visible; /* IMPORTANT: prevent icon clipping */
+      }
+
+      /* knob */
+      .theme-switch .slider::before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 3px;
+        top: 3px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 10; /* knob is above track but below icon */
+      }
+
+      /* ICON FIX HERE */
+      .theme-switch .slider::after {
+        content: "☀️";
+        position: absolute;
+        font-size: 18px;
+        top: 50%;
+        left: 30px; /* keep OUTSIDE the knob area */
+        transform: translateY(-50%);
+        z-index: 20; /* ICON ALWAYS ABOVE KNOB */
+        opacity: 1;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      /* checked: move knob right */
+      .theme-switch input:checked + .slider::before {
+        transform: translateX(30px);
+      }
+
+      /* checked: moon icon */
+      .theme-switch input:checked + .slider::after {
+        content: "🌙";
+        left: 8px; /* moon on left side */
+      }
     </style>
   </head>
   <body>
@@ -449,7 +509,7 @@
       >
         Champion Thread
       </div> -->
-      
+
       <div class="overlay">
         <div id="headline_cycler">
           <div class="headline_cycler_centralizer">
@@ -497,17 +557,16 @@
             <li><a href="#section5">Services</a></li>
             <li><a href="#section6">Contact</a></li>
             <li>
-            <div class="theme-switch-wrapper">
-            <label class="theme-switch mt-2" for="checkbox">
-              <input type="checkbox" id="checkbox" />
-              <div class="slider round"></div>
-            </label>
-            <span id="toggle-label"> - Dark Mode</span>
-          </div>
-          </li>          </ul>
-          
+              <div class="theme-switch-wrapper">
+                <label class="theme-switch mt-2" for="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <div class="slider round"></div>
+                </label>
+                <span id="toggle-label"></span>
+              </div>
+            </li>
+          </ul>
         </nav>
-        
       </div>
     </header>
     <!-- end header -->
@@ -940,7 +999,12 @@
               <li class="slide first">
                 <blockquote class="clearfix centered">
                   <p class="atxt_hl">
-                    "I've used both the cotton and wool threads from this  company in my quilting projects. The cotton threads are  ideal for piecing and quilting, while the wool threads add a  unique texture and depth to my designs. The color range and  quality of these threads are top-notch, making my quilts  stand out."
+                    "I've used both the cotton and wool threads from this
+                    company in my quilting projects. The cotton threads are
+                    ideal for piecing and quilting, while the wool threads add a
+                    unique texture and depth to my designs. The color range and
+                    quality of these threads are top-notch, making my quilts
+                    stand out."
                   </p>
                   <p class="small atxt_sl">Emily S., Quilter</p>
                 </blockquote>
@@ -948,7 +1012,12 @@
               <li class="slide">
                 <blockquote class="clearfix centered">
                   <p class="atxt_hl">
-                    "The silk threads from this company are a dream for intricate embroidery work. They are smooth, lustrous, and  glide through fabric effortlessly. The polyester threads are  also fantastic for more robust projects, providing the strength and resilience needed for detailed designs. Both  types have enhanced the quality of my embroidery."
+                    "The silk threads from this company are a dream for
+                    intricate embroidery work. They are smooth, lustrous, and
+                    glide through fabric effortlessly. The polyester threads are
+                    also fantastic for more robust projects, providing the
+                    strength and resilience needed for detailed designs. Both
+                    types have enhanced the quality of my embroidery."
                   </p>
                   <p class="small atxt_sl">Munasinghe , Embroidery Artist</p>
                 </blockquote>
@@ -956,7 +1025,13 @@
               <li class="slide">
                 <blockquote class="clearfix centered">
                   <p class="atxt_hl">
-                    "The cotton threads from this company are my go-to for all my natural fiber garments. They are strong, easy to work with, and provide a beautiful finish. The polyester threads are equally impressive, offering durability and flexibility for a variety of fabrics. My garments have never looked  better, and my customers are always impressed by the  quality."
+                    "The cotton threads from this company are my go-to for all
+                    my natural fiber garments. They are strong, easy to work
+                    with, and provide a beautiful finish. The polyester threads
+                    are equally impressive, offering durability and flexibility
+                    for a variety of fabrics. My garments have never looked
+                    better, and my customers are always impressed by the
+                    quality."
                   </p>
                   <p class="small atxt_sl">Jane H., Fashion Designer</p>
                 </blockquote>
@@ -964,7 +1039,13 @@
               <li class="slide">
                 <blockquote class="clearfix centered">
                   <p class="atxt_hl">
-                    "Whether I'm working with cotton, polyester, wool, or silkthreads, this company never disappoints. The cotton threads are perfect for general sewing and crafts, while the polyester threads offer great versatility. I especially love  the wool threads for adding a cozy, tactile element to my  projects, and the silk threads for their luxurious feel and  finish."
+                    "Whether I'm working with cotton, polyester, wool, or
+                    silkthreads, this company never disappoints. The cotton
+                    threads are perfect for general sewing and crafts, while the
+                    polyester threads offer great versatility. I especially love
+                    the wool threads for adding a cozy, tactile element to my
+                    projects, and the silk threads for their luxurious feel and
+                    finish."
                   </p>
                   <p class="small atxt_sl">Laura M., Craft Enthusiast</p>
                 </blockquote>
@@ -972,7 +1053,13 @@
               <li class="slide">
                 <blockquote class="clearfix centered">
                   <p class="atxt_hl">
-                    "As a small business, we rely on Champion Thread Manufacturing Company to provide us with the threads we need at affordable prices. Despite our relatively small order volumes, they always treat us with the utmost care and respect. The quality of their threads is superb and their customer service is unmatched. We will continue to use Champion threads for all our thread manufacturing needs"
+                    "As a small business, we rely on Champion Thread
+                    Manufacturing Company to provide us with the threads we need
+                    at affordable prices. Despite our relatively small order
+                    volumes, they always treat us with the utmost care and
+                    respect. The quality of their threads is superb and their
+                    customer service is unmatched. We will continue to use
+                    Champion threads for all our thread manufacturing needs"
                   </p>
                   <p class="small atxt_sl">Rimzan, Owner, DESIGNS</p>
                 </blockquote>
@@ -980,7 +1067,14 @@
               <li class="slide">
                 <blockquote class="clearfix centered">
                   <p class="atxt_hl">
-                    "Champion Thread Manufacturing Company has been a trusted supplier of ours for many years. Their threads are consistently high-quality and their customer service is excellent. Whenever we have an issue or question, they  respond promptly and work diligently to resolve it. We highly recommend Champion Thread Manufacturing Company to any company looking for a reliable, high-quality thread manufacturer"
+                    "Champion Thread Manufacturing Company has been a trusted
+                    supplier of ours for many years. Their threads are
+                    consistently high-quality and their customer service is
+                    excellent. Whenever we have an issue or question, they
+                    respond promptly and work diligently to resolve it. We
+                    highly recommend Champion Thread Manufacturing Company to
+                    any company looking for a reliable, high-quality thread
+                    manufacturer"
                   </p>
                   <p class="small atxt_sl">
                     Abdul Haliq, Sourcing Manager, Jazeels.
@@ -1247,7 +1341,12 @@
             Thread umbrella
           </p>
           <div class="clear"></div>
-          <div><img alt="champion thread brand logos" src="images/Champion threads Cal header.pdf.png"/></div>
+          <div>
+            <img
+              alt="champion thread brand logos"
+              src="images/Champion threads Cal header.pdf.png"
+            />
+          </div>
           <!-- Updated Slider wrapper with "logo-slider" class -->
           <div class="logo-slider">
             <!-- <div class="client">
@@ -1274,16 +1373,23 @@
       </div>
     </section>
 
-
     <section class="section white-bg client-logos-section">
       <div class="container clearfix">
         <div class="col-lg-12 centered">
           <h3>Subsidiary Company</h3>
           <div class="divider"></div>
           <p class="sub-heading">
-            Offset, Letter Press Printers, Publishers, Stationers & manufacturers of Packing Materials
+            Offset, Letter Press Printers, Publishers, Stationers &
+            manufacturers of Packing Materials
           </p>
-          <div style="display: flex; justify-content: center;"><img class="mx-auto" alt="champion printers logo" src="images/Champion printers logo.png" style="max-width: 400px;"/></div>
+          <div style="display: flex; justify-content: center">
+            <img
+              class="mx-auto"
+              alt="champion printers logo"
+              src="images/Champion printers logo.png"
+              style="max-width: 400px"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -1409,9 +1515,8 @@
             to you as soon as possible.
           </p>
           <h4>
-            <a href="mailto:champrin@sltnet.lk" title="" class="link"
-              > <i class="fa fa-envelope"></i
-              >champtrd@sltnet.lk</a
+            <a href="mailto:champrin@sltnet.lk" title="" class="link">
+              <i class="fa fa-envelope"></i>champtrd@sltnet.lk</a
             >
           </h4>
           <ul class="social-list clearfix">
@@ -1432,13 +1537,10 @@
             <div class="col-lg-6 col-md-6">
               <p class="uppercase">Sri Lanka</p>
               <p>
-                <i class="fa fa-map-pin"></i
-              > 100 New Moor Street,<br />
+                <i class="fa fa-map-pin"></i> 100 New Moor Street,<br />
                 Colombo 12<br />
-                <i class="fa fa-phone"></i
-              > 011 2447846 <br />
-                <i class="fa fa-phone"></i
-              > 011 2470468
+                <i class="fa fa-phone"></i> 011 2447846 <br />
+                <i class="fa fa-phone"></i> 011 2470468
               </p>
             </div>
           </div>
@@ -1582,24 +1684,24 @@
 
         if (currentTheme === "dark-mode") {
           toggleSwitch.checked = true;
-          toggleLabel.textContent = " Light Mode";
+          toggleLabel.textContent = " ";
         } else {
-          toggleLabel.textContent = " Dark Mode";
+          toggleLabel.textContent = " ";
         }
       } else {
         // Default to light mode
-        toggleLabel.textContent = " Dark Mode";
+        toggleLabel.textContent = " ";
       }
 
       function switchTheme(e) {
         if (e.target.checked) {
           document.body.classList.add("dark-mode");
           localStorage.setItem("theme", "dark-mode");
-          toggleLabel.textContent = " Light Mode";
+          toggleLabel.textContent = "";
         } else {
           document.body.classList.remove("dark-mode");
           localStorage.setItem("theme", "light-mode");
-          toggleLabel.textContent = " Dark Mode";
+          toggleLabel.textContent = "";
         }
       }
 
@@ -1628,11 +1730,15 @@
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener("click", function (event) {
           const isClickInsideNav = navbar.contains(event.target);
           const isClickOnHamburger = hamburger.contains(event.target);
-          
-          if (!isClickInsideNav && !isClickOnHamburger && navbar.classList.contains('active')) {
+
+          if (
+            !isClickInsideNav &&
+            !isClickOnHamburger &&
+            navbar.classList.contains("active")
+          ) {
             hamburger.classList.remove("active");
             navbar.classList.remove("active");
           }
